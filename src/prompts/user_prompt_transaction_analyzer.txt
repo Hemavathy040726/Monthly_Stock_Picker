@@ -1,0 +1,1 @@
+Read this PDF and extract only total savings: {test_pdf}
