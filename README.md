@@ -1,8 +1,6 @@
 # Monthly Stock Picker --- AI Financial Planning System
 
-![Monthly Stock Picker Banner](https://via.placeholder.com/800x400/4A90E2/FFFFFF?text=Monthly+Stock+Picker+v2.0+-+Agentic+AI+for+Smart+Investing)  
 
-*(Image: A sleek dashboard showing PDF analysis, portfolio pie chart, and stock recommendation cards. Generated via AI tools like Midjourney.)*
 
 ### Powered by LLM + LangGraph + Tool-Integrated Agents
 
