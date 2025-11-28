@@ -38,9 +38,37 @@ The system follows a **modular, graph-based workflow** using **LangGraph**, wher
 
 ### High-Level Flow
 
-![Architecture Diagram](https://via.placeholder.com/800x400/7F8C8D/FFFFFF?text=Agent+Flow:+PDF+Analysis+%E2%86%92+Portfolio+Allocation+%E2%86%92+Stock+Pick+%E2%86%92+Human+Confirm)  
+```text
 
-*(Image: Flowchart showing Agent 1 → Agent 2 → Agent 3, with shared state arrows and tool integrations.)*
+                                   ┌─────────────────────────────────────┐
+                                   │          Shared FinanceState        │
+                                   │  (savings - portfolio - messages)   │
+                                   └─────────────────▲──────▲──────▲──────┘
+                                                     │      │      │
+               ┌─────────────┐   ┌─────────────────┘      │      └─────────────────┐
+               │             │   │                                │                  │
+         ┌─────▼─────┐   ┌───▼───▼──────┐                 ┌─────▼──────┐     ┌─────▼───────┐
+         │   PDF     │   │ Agent 1       │   total_savings │ Agent 2     │     │ Agent 3      │
+         │ Statement │──→│ Transaction   │────────────────→│ Portfolio   │──→  │ Instrument   │
+         │           │   │ Analyzer      │   ₹47,000       │ Allocator   │ Equity│ Picker       │
+         └───────────┘   └──────────────┘                 └─────────────┘ ₹25K └──────────────┘
+                                                                       │
+                                                                       ▼
+                                                               Buy 18 INFY @ ₹1,345
+                                                                       │
+                                                                       ▼
+                                                            ┌──────────────────────┐
+                                                            │  Human Confirmation  │
+                                                            │   Confirm purchase?  │
+                                                            └───────────┬──────────┘
+                                                                        │
+                                                                Yes     │     No
+                                                                        ▼     ▼
+                                                            ┌─────────────┐   ┌────────────┐
+                                                            │ Trade Ready │   │  Skipped   │
+                                                            │ (Zerodha)   │   └────────────┘
+                                                            └─────────────┘
+```
 
 | Layer              | Folder/Path                  | Description                                                                 |
 
