@@ -1,4 +1,10 @@
 # Monthly Stock Picker --- AI Financial Planning System
+[![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white)](#)
+[![LangChain](https://img.shields.io/badge/LangChain-1C3C3C?logo=langchain&logoColor=white)](#)
+[![LangGraph](https://img.shields.io/badge/LangGraph-00A3E0?logo=graphql&logoColor=white)](#)
+[![Groq](https://img.shields.io/badge/Groq-FF4B4B?logo=groq&logoColor=white)](#)
+[![Tavily](https://img.shields.io/badge/Tavily-4CAF50?logo=tavily&logoColor=white)](#)
+[![Llama 3.3](https://img.shields.io/badge/Llama--3.3--70B-8A2BE2?logo=meta&logoColor=white)](#)
 
 
 
