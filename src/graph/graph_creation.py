@@ -25,21 +25,20 @@ def create_agent():
     # --- Entry Point ---
     graph.set_entry_point("llm_analyzer")
 
-    # --- Add Edges ---
-    # graph.add_conditional_edges("llm_analyzer", should_continue, {"transaction_analyzer_tools": "transaction_analyzer_tools", END: "portfolio_llm"})
-    # graph.add_edge("transaction_analyzer_tools", "llm_analyzer")  # back from tools
-    # graph.add_edge("portfolio_llm", "portfolio_tools")
-    # graph.add_edge("portfolio_tools", "llm_investment_executor")
-    # graph.add_edge("llm_investment_executor", "investment_tools")
-    # graph.add_edge("investment_tools", END)
+
 
     # --- Add Edges ---
     graph.add_conditional_edges("llm_analyzer", should_continue,{"transaction_analyzer_tools": "transaction_analyzer_tools",END: "transaction_analyzer_tools"})
     graph.add_edge("transaction_analyzer_tools", "portfolio_llm")
     graph.add_edge("portfolio_llm", "portfolio_tools")
     graph.add_edge("portfolio_tools", "llm_investment_executor")
-    graph.add_edge("llm_investment_executor", "investment_tools")
-    graph.add_edge("investment_tools", END)
+    # graph.add_edge("llm_investment_executor", "investment_tools")
+    # graph.add_edge("investment_tools", END)
+
+    # In graph_creation.py — keep edges simple
+    graph.add_edge("portfolio_tools", "llm_investment_executor")
+    graph.add_edge("llm_investment_executor", END)  # Skip tools node if not needed
+    # Remove: graph.add_edge("llm_investment_executor", "investment_tools")
 
     return graph.compile()
 
