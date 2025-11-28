@@ -252,7 +252,7 @@ Financial systems demand **zero-downtime reliability**. We've implemented **comp
 
 ```
 
-This boosts **credibility** for real-money use, with **no crashes** in 500+ test runs.
+This boosts **credibility** for real-money use.
 
 ---
 
